@@ -10,6 +10,11 @@ pub fn cash_flow(income: f64, expenses: f64) -> f64 {
     return income - expenses;
 }
 
+pub fn rule_72(rate: f64) -> f64 {
+    return 72. / rate;
+}
+
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -26,5 +31,10 @@ mod tests {
     #[test]
     fn test_cash_flow() {
         assert_eq!(cash_flow(2150.50, 2050.25), 100.25);
+    }
+    
+    #[test]
+    fn test_rule_72() {
+        assert_eq!(rule_72(7.5), 9.6);
     }
 }
