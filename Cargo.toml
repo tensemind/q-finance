@@ -1,0 +1,13 @@
+[package]
+name = "q-finance"
+version = "0.0.1"
+authors = ["marko <marko@tensemind.com>"]
+edition = "2018"
+
+[dependencies]
+
+
+[lib]
+name = "qfinance"
+path = "src/lib.rs"
+
