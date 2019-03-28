@@ -7,4 +7,17 @@ fn main() {
     println!("{}" , format!("{:.2}", compound_interest(2000., 5., 3., 365.)));
     println!("{}" , format!("{:.2}", continuous_interest(2000., 5., 3.)));
     
+
+    let mut x = 0; // mut x: i32
+    let mut done = false; // mut done: bool
+
+    while !done {
+        println!("{}" , format!("{:.2}", continuous_interest(x as f64, 5., 3.)));
+
+        if x == 10000000 {
+            done = true;
+        }
+        x += 1;
+    }
+
 }

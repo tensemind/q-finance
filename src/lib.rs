@@ -1,5 +1,20 @@
 use std::f64::consts::E; 
 
+pub mod qfinance {
+    pub struct SI {
+        pub p: f64,
+        pub r: f64,
+        pub t: f64,
+    }
+
+    impl SI {
+        pub fn simple_interest(&mut self) -> f64 {
+            let si = self.p * self.r / 100. * self.t;
+            return si;
+        }
+    }
+}
+
 pub fn simple_interest(principal: f64, rate: f64, time: f64) -> f64 {
     return principal * rate / 100. * time;
 }
@@ -31,6 +46,12 @@ mod tests {
     #[test]
     fn test_simple_interest() {
         assert_eq!(simple_interest(2000., 5., 3.), 300.);
+    }
+    
+    #[test]
+    fn test_simple_interest2() {
+        let mut x = qfinance::SI { p: 2000., r: 5., t: 3. };
+        assert_eq!(x.simple_interest(), 300.);
     }
     
     #[test]
